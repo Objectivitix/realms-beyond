@@ -45,9 +45,19 @@ article {
   width: min(90vw, 70ch);
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 hgroup {
   color: var(--white);
   font-family: var(--ff-deco);
+}
+
+.desc {
+  font-style: italic;
 }
 
 main {
