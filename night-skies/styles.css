@@ -43,6 +43,7 @@ body {
   color: var(--gray);
   font-family: var(--ff-text);
   font-size: 1.5rem;
+  hyphens: auto;
 }
 
 nav {
