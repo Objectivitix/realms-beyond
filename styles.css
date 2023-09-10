@@ -26,14 +26,14 @@ body {
   justify-content: center;
   padding: 15rem 0;
   font-family: "EB Garamond", serif;
-  font-size: 3rem;
+  font-size: min(calc(3.5vw + 1.25rem), 2.75rem);
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  width: min(90vw, 65ch);
+  width: min(90vw, 45ch);
 }
 
 h1 {
