@@ -1,5 +1,11 @@
 const main = document.querySelector("main");
 
+const chapterNames =
+  Array.from(document.querySelectorAll("nav a"))
+  .map(node => node.textContent);
+
+const HEADING_IDS = "abcdefghijklmnopqrstuvwxyz";
+
 function sanitizeParagraph(dirtyText) {
   return dirtyText
     .replace(/<em>/g, "<span class=\"italic\">")
@@ -30,11 +36,11 @@ function createScene(scene) {
   return div;
 }
 
-function createChapter(chapter, name) {
+function createChapter(chapter, name, headingID) {
   const section = document.createElement("section");
 
   const heading = document.createElement("h2");
-  heading.id = name.toLowerCase();
+  heading.id = headingID;
   heading.textContent = name;
   section.appendChild(heading);
 
@@ -47,7 +53,7 @@ function createChapter(chapter, name) {
   return section;
 }
 
-async function render(chapterNames) {
+async function render() {
   const response = await fetch("story.txt");
   const text = await response.text();
 
@@ -55,8 +61,9 @@ async function render(chapterNames) {
 
   chapters.forEach((chapter, index) => {
     const name = chapterNames[index];
-    main.appendChild(createChapter(chapter, name));
+    const headingID = HEADING_IDS[index];
+    main.appendChild(createChapter(chapter, name, headingID));
   });
 }
 
-render(["One", "Two", "Three", "Four", "Five", "Epilogue"]);
+render();

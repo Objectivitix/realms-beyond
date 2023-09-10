@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+:root {
+  --ff-deco: "Bebas Neue", sans-serif;
+  --ff-text: "EB Garamond", serif;
+
+  --black: hsl(217 15% 10%);
+  --gray: hsl(217 10% 15%);
+}
+
+body {
+  background-image: linear-gradient(hsla(0 0% 100% / 70%), hsla(0 0% 100% / 70%)),
+    url("./the-facility.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--gray);
+  font-family: var(--ff-text);
+}
+
+nav {
+  border-color: var(--gray);
+  font-size: 1.5rem;
+}
+
+hgroup {
+  color: var(--black);
+  font-family: var(--ff-deco);
+  text-align: center;
+  line-height: 1.15;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+h2 {
+  color: var(--black);
+}
+
+.end {
+  font-size: 2rem;
+  font-family: var(--ff-deco);
+  text-align: center;
+}
